@@ -29,15 +29,28 @@ public class FlashCard {
 
     @Column(name = "sentence")
     private String sentence;
+    
+    @Column(name = "translate")
+    private String translate;
+
+    public FlashCard(int id, String word, String sentence, String translate) {
+        this.id = id;
+        this.word = word;
+        this.sentence = sentence;
+        this.translate = translate;
+    }
 
     public FlashCard() {
     }
 
-    public FlashCard(int id, String word, String sentence) {
-        this.id = id;
-        this.word = word;
-        this.sentence = sentence;
+    public String getTranslate() {
+        return translate;
     }
+
+    public void setTranslate(String translate) {
+        this.translate = translate;
+    }
+
 
     public int getId() {
         return id;

@@ -5,6 +5,8 @@
 package flashCards.learnEnglish.bussiness.abstracts;
 
 import flashCards.learnEnglish.entities.concretes.FlashCard;
+import flashCards.learnEnglish.utilities.DataResult;
+import flashCards.learnEnglish.utilities.Result;
 import java.util.List;
 
 /**
@@ -12,12 +14,14 @@ import java.util.List;
  * @author yahya
  */
 public interface FlashCardService {
-    
-    List<FlashCard> getAll();
-    
-    FlashCard getByWord(String word);
-    
-    FlashCard getById(int id);
-    
-    FlashCard add(FlashCard flashCard);
+
+    DataResult<List<FlashCard>> getAll();
+
+    DataResult<FlashCard> getByWord(String word);
+
+    DataResult<FlashCard> getById(int id);
+
+    Result add(FlashCard flashCard);
+
+    DataResult<List<FlashCard>> getByUserNumber(int userNumber);
 }

@@ -29,15 +29,19 @@ public class FlashCard {
 
     @Column(name = "sentence")
     private String sentence;
-    
+
     @Column(name = "translate")
     private String translate;
 
-    public FlashCard(int id, String word, String sentence, String translate) {
+    @Column(name = "user_number")
+    private int userNumber;
+
+    public FlashCard(int id, String word, String sentence, String translate, int userNumber) {
         this.id = id;
         this.word = word;
         this.sentence = sentence;
         this.translate = translate;
+        this.userNumber = userNumber;
     }
 
     public FlashCard() {
@@ -50,7 +54,6 @@ public class FlashCard {
     public void setTranslate(String translate) {
         this.translate = translate;
     }
-
 
     public int getId() {
         return id;
@@ -75,5 +78,13 @@ public class FlashCard {
     public void setSentence(String sentence) {
         this.sentence = sentence;
     }
-    
+
+    public int getUserNumber() {
+        return userNumber;
+    }
+
+    public void setUserId(int userNumber) {
+        this.userNumber = userNumber;
+    }
+
 }

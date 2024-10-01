@@ -6,10 +6,13 @@ package flashCards.learnEnglish.api;
 
 import flashCards.learnEnglish.bussiness.abstracts.FlashCardService;
 import flashCards.learnEnglish.entities.concretes.FlashCard;
+import flashCards.learnEnglish.utilities.DataResult;
+import flashCards.learnEnglish.utilities.Result;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,12 +35,18 @@ public class FlashCardController {
     }
 
     @GetMapping("/getAll")
-    public List<FlashCard> getAll() {
+    public DataResult<List<FlashCard>> getAll() {
         return this.flashCardService.getAll();
     }
+
     @PostMapping("/add")
-    public FlashCard add(@RequestBody FlashCard flashCard){
+    public Result add(@RequestBody FlashCard flashCard) {
         return this.flashCardService.add(flashCard);
+    }
+
+    @GetMapping("/getUserFlashCards/{userNumber}")
+    public DataResult<List<FlashCard>> getByUserId(@PathVariable int userNumber) {
+        return this.flashCardService.getByUserNumber(userNumber);
     }
 
 }

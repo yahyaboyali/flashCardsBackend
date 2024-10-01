@@ -5,12 +5,16 @@
 package flashCards.learnEnglish.dataAccess;
 
 import flashCards.learnEnglish.entities.concretes.FlashCard;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author yahya
  */
-public interface FlashCardDao extends JpaRepository<FlashCard,Integer> {
+public interface FlashCardDao extends JpaRepository<FlashCard, Integer> {
+
     FlashCard getByWord(String word);
+
+    List<FlashCard> getByUserNumber(int userNumber);
 }

@@ -15,35 +15,28 @@ import jakarta.persistence.Table;
  *
  * @author yahya
  */
-@Table(name = "note")
+@Table(name = "topic")
 @Entity
-public class Note {
+public class Topic {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "title",columnDefinition = "TEXT")
-    private String title;
-
-    @Column(name = "content",columnDefinition = "TEXT")
-    private String content;
+    @Column(name = "name",columnDefinition = "TEXT")
+    private String name;
 
     @Column(name = "user_number")
     private int userNumber;
-    
-    @Column(name = "topic_id")
-    private int topicId;
 
-    public Note() {
+    public Topic() {
     }
 
-    public Note(int id, String title, String content, int userNumber, int topicId) {
+    public Topic(int id, String name, int userNumber) {
         this.id = id;
-        this.title = title;
-        this.content = content;
+        this.name = name;
         this.userNumber = userNumber;
-        this.topicId = topicId;
     }
 
     public int getId() {
@@ -54,20 +47,12 @@ public class Note {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getUserNumber() {
@@ -78,12 +63,4 @@ public class Note {
         this.userNumber = userNumber;
     }
 
-    public int getTopicId() {
-        return topicId;
-    }
-
-    public void setTopicId(int topicId) {
-        this.topicId = topicId;
-    }
-    
 }

@@ -4,6 +4,9 @@
  */
 package flashCards.learnEnglish.utilities;
 
+import flashCards.learnEnglish.entities.concretes.Topic;
+import java.util.Optional;
+
 /**
  *
  * @author yahya

@@ -24,13 +24,13 @@ public class FlashCard {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "word")
+    @Column(name = "word",columnDefinition = "TEXT")
     private String word;
 
-    @Column(name = "sentence")
+    @Column(name = "sentence",columnDefinition = "TEXT")
     private String sentence;
 
-    @Column(name = "translate")
+    @Column(name = "translate",columnDefinition = "TEXT")
     private String translate;
 
     @Column(name = "user_number")
